@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding:0;
+    background: #121212;
+}
+
+.main-navbar{
+    background: #111111;
+    min-height:80px;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color: #f5c518 !important;
+}
+
+.nav-link{
+    color:white !important;
+    font-weight:500;
+    margin-right: 8px;
+}
+
+.nav-link:hover{
+    color: #f5c518 !important;
+}
+
+.search-form{
+    width:35%;
+}
+
+.search-box:focus{
+    box-shadow: none;
+}
+
+.my-ticket-btn{
+    background: #2d2d2d;
+    color:white;
+    border-radius: 20px;
+}
+
+.my-ticket-btn:hover{
+    background: #3d3d3d;
+    color:white;
+}
+
+.register-btn{
+    background: #f5c518;
+    color:black;
+    font-weight: 600;
+}
+
+.register-btn:hover{
+    background: #ffd84d;
+}
