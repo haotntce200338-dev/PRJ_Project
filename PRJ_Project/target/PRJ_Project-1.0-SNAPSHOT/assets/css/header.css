@@ -8,26 +8,24 @@ body{
     background: #111111;
     min-height:80px;
     border-bottom:1px solid #222;
+    position: sticky;
+    top:0;
+    z-index: 1000;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:700;
-    color: #f5c518 !important;
-}
-
-.nav-link{
-    color:white !important;
-    font-weight:500;
-    margin-right: 8px;
-}
-
-.nav-link:hover{
+    font-size:40px;
+    font-weight:800;
     color: #f5c518 !important;
 }
 
 .search-form{
-    width:35%;
+    width:45%;
+}
+
+.search-box{
+    height: 46px;
+    border-radius: 12px;
 }
 
 .search-box:focus{
@@ -37,7 +35,7 @@ body{
 .my-ticket-btn{
     background: #2d2d2d;
     color:white;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
 .my-ticket-btn:hover{
@@ -53,4 +51,12 @@ body{
 
 .register-btn:hover{
     background: #ffd84d;
+}
+
+.navbar-toggler{
+    border:1px solid rgba(255,255,255,.4);
+}
+
+.navbar-toggler-icon{
+    filter: invert(1);
 }

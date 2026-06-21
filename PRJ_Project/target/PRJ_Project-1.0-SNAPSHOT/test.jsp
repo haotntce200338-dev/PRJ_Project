@@ -7,15 +7,20 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/include/header.jsp"%>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CinemaHub</title>
-    </head>
-    <body>
-        <h1>Header Preview</h1>
-    </body>
-</html>
-<%--<%@include file="/WEB-INF/include/footer.jsp"%>
---%>
+<div class="page-layout">
+
+    <%@include file="/WEB-INF/include/sidebar.jsp"%>
+
+    <div class="main-content">
+        <h1>
+            Welcome to CinemaHub
+        </h1>
+
+        <p>
+            Discover movies and book tickets online
+        </p>
+    </div>
+
+</div>
+
+<%@include file="/WEB-INF/include/footer.jsp"%>

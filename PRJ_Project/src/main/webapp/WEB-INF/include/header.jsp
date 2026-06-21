@@ -10,89 +10,70 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>CinemaHub</title>
+
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.css">
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/header.css">
+        
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/sidebar.css">
+        
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/home.css">
     </head>
-</head>
-<body>
 
-    <nav class="navbar navbar-expand-lg main-navbar">
+    <body>
 
-        <div class="container-fluid px-4">
+        <nav class="navbar navbar-expand-lg main-navbar">
 
-            <!-- Logo -->
-            <a class="navbar-brand logo" href="#">
-                CinemaHub
-            </a>
+            <div class="container-fluid px-4">
 
-            <!-- Mobile Menu -->
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="${pageContext.request.contextPath}/home.jsp">
+                    CinemaHub
+                </a>
 
-            <div class="collapse navbar-collapse"
-                 id="navbarContent">
+                <!-- Mobile Menu -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <!-- Left Menu -->
-                <ul class="navbar-nav ms-4">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Home
+                <div class="collapse navbar-collapse justify-content-end"
+                     id="navbarContent">
+
+                    <!-- Search -->
+                    <form class="mx-auto search-form"
+                          action="${pageContext.request.contextPath}/movies"
+                          method="get">
+                        <input class="form-control search-box"
+                               type="search"
+                               name="keyword"
+                               placeholder="Search movies...">
+                    </form>
+
+                    <!-- Right Menu -->
+                    <div class="d-flex align-items-center gap-2">
+
+                        <a class="btn my-ticket-btn" href="${pageContext.request.contextPath}/my-tickets">
+                            My tickets
                         </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Now Showing
+                        <a class="btn btn-outline-light" href="#">
+                            Sign In
                         </a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Coming Soon
+                        <a class="btn register-btn" href="#">
+                            Sign Up
                         </a>
-                    </li>
+                    </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            Cinemas
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Search -->
-                <form class="d-flex mx-auto search-form">
-                    <input class="form-control search-box"
-                           type="search"
-                           placeholder="Search movies...">
-                </form>
-
-                <!-- Right Menu -->
-                <div class="d-flex align-items-center gap-2">
-
-                    <a class="btn my-ticket-btn" href="#">
-                        My tickets
-                    </a>
-
-                    <a class="btn btn-outline-light" href="#">
-                        Sign In
-                    </a>
-
-                    <a class="btn register-btn" href="#">
-                        Sign Up
-                    </a>
                 </div>
+
 
             </div>
 
+        </nav>
 
-        </div>
+        <script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.js"></script>
 
-    </nav>
-
-</body>
-</html>
