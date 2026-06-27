@@ -6,7 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="movie-card">
+<a href="${pageContext.request.contextPath}/movie-detail.jsp"
+   class="movie-card">
     
     <img class="movie-poster"
          src="${pageContext.request.contextPath}/assets/images/poster-placeholder.jsp"
@@ -42,4 +43,4 @@
         
     </div>
     
-</div>
+</a>
