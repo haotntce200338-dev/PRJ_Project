@@ -1,0 +1,53 @@
+.movie-detail-card{
+    display: flex;
+    gap:40px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.detail-poster{
+    width: 280px;
+    border-radius: 16px;
+}
+
+.detail-info{
+    flex:1;
+}
+
+.detail-info h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.rating{
+    font-size: 20px;
+    color:#f5c518;
+    margin-bottom: 18px;
+}
+
+.detail-buttons{
+    margin-top: 30px;
+    display: flex;
+    gap:15px;
+}
+
+.overview{
+    margin-top: 50px;
+    background: white;
+    padding:25px;
+    border-radius: 18px;
+}
+
+.reviews{
+    margin-top: 40px;
+}
+
+.review-card{
+    background: white;
+    border-radius: 16px;
+    padding:20px;
+    margin-top:15px;
+}

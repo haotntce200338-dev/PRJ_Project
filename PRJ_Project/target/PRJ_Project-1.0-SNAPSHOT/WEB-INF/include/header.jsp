@@ -55,10 +55,6 @@
                     <!-- Right Menu -->
                     <div class="d-flex align-items-center gap-2">
 
-                        <a class="btn my-ticket-btn" href="${pageContext.request.contextPath}/my-tickets">
-                            My tickets
-                        </a>
-
                         <a class="btn btn-outline-light" href="#">
                             Sign In
                         </a>
