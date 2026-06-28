@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/sidebar.css">
         
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/home.css">
+        
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/booking.css">
     </head>
 
     <body>
