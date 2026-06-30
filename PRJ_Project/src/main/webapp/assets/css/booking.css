@@ -1,74 +1,121 @@
 .screen{
-    width: 70%;
-    margin: 0 auto 35px;
+    width: 55%;
+    margin: 0 auto 20px;
     text-align: center;
-    padding: 12px;
+    padding: 8px 0;
     background: #ececec;
-    border-radius: 40px;
+    border-radius: 0;
+    font-size: 18px;
     font-weight: 700;
-    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
 }
 
 .seat-layout{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 4px;
 }
 
 .seat-row{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 3px;
+    position: relative;
+}
+
+.seat-row .seat:first-of-type{
+    margin-left: 36px;
 }
 
 .row-label{
-    width: 30px;
-    font-size: 18px;
-    font-weight: bold;
+    width: 24px;
+    margin-right: 6px;
+    font-size: 20px;
+    font-weight: 700;
     text-align: center;
+    position: absolute;
+    left: 120px;
+    color: #222;
 }
 
 .seat{
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    border: 1px solid #bbb;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .2s;
+    width:14px;
+    height:14px;
+    margin: 1px;
+    border:2px solid #cfcfcf;
+    border-radius:4px;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:8px;
+    font-weight:600;
+    color:transparent;
+    transition:.15s ease;
+    user-select:none;
 }
 
 .seat:hover{
-    background: #ececec;
+    transform:scale(1.15);
+    color:#333;
+    border-color:#999;
+    z-index:5;
 }
 
 .seat.selected{
-    background: #28a745;
-    border-color: #28a745;
-    color: white;
+    background:#2db34a;
+    border-color:#2db34a;
+    color:white;
+    transform:scale(1.08);
+}
+
+.seat.selected:hover{
+    transform:scale(1.10);
 }
 
 .seat.occupied{
-    background: #555;
-    color: white;
-    cursor: not-allowed;
+    background:#666;
+    border-color:#666;
+    color:white;
+    cursor:not-allowed;
+}
+
+.seat.occupied:hover{
+    transform:none;
 }
 
 .seat-legend{
-    margin-top: 35px;
+    margin-top: 18px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 28px;
 }
 
 .legend-item{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.main-content{
+    border-radius: 0;
+}
+
+.modal-body{
+    padding: 20px 24px;
+}
+
+.modal-header{
+    padding: 14px 24px;
+}
+
+.modal-footer{
+    padding: 12px 24px;
+}
+
+.seat-aisle{
+    width: 30px;
+    flex-shrink: 0;
 }

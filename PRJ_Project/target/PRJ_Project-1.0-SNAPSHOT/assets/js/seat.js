@@ -1,14 +1,12 @@
-const seats = document.querySelectorAll(".seat-item");
+document.querySelectorAll(".seat-item").forEach(seat => {
 
-seats.forEach(seat => {
+    if (seat.classList.contains("occupied"))
+        return;
+
     seat.addEventListener("click", () => {
-        
-        if (seat.classList.contains("occupied")) {
-            return;
-        }
+
         seat.classList.toggle("selected");
-        
-        console.log(seat.dataset.seat);
-        
+
     });
+
 });
