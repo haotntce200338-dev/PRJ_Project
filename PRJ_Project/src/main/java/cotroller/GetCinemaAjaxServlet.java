@@ -25,14 +25,14 @@ public class GetCinemaAjaxServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+
         response.setContentType("application/json;charset=UTF-8");
         String regionCode = request.getParameter("regionCode");
-        
+
         CinemaDAO dao = new CinemaDAO();
         List<Cinema> list = dao.getCinemasByRegion(regionCode);
         System.out.println("====== SỐ LƯỢNG RẠP TÌM THẤY CHO VÙNG " + regionCode + " LÀ: " + list.size());
-        // Tự tạo chuỗi JSON đơn giản (hoặc dùng thư viện Gson/Jackson nếu nhóm có cài)
+        // tạo chuỗi JSON đơn giản
         try (PrintWriter out = response.getWriter()) {
             StringBuilder json = new StringBuilder("[");
             for (int i = 0; i < list.size(); i++) {
@@ -47,6 +47,4 @@ public class GetCinemaAjaxServlet extends HttpServlet {
             out.flush();
         }
     }
-    }
-
-
+}

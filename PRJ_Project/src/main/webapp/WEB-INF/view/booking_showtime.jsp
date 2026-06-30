@@ -48,7 +48,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>BƯỚC 1: CHỌN SUẤT CHIẾU</h2>
+    <h2>CHỌN SUẤT CHIẾU</h2>
     
     <% if(request.getAttribute("ERROR_MSG") != null) { %>
         <div style="color: red; font-weight: bold; margin-bottom: 15px;"><%= request.getAttribute("ERROR_MSG") %></div>
@@ -92,7 +92,7 @@
     const isRestrictedMovie = true; 
     const minAgeRequired = 18;
 
-    // Lấy contextPath của ứng dụng gán vào biến Javascript toàn cục để an toàn tuyệt đối
+    
     const contextPath = "${pageContext.request.contextPath}";
 
     // Thiết lập ngày tối thiểu là hôm nay
@@ -135,7 +135,7 @@
             section.style.display = "block";
             listContainer.innerHTML = "<em>Đang tải suất chiếu...</em>";
 
-            // ĐÃ SỬA: Thay thế dấu backtick bằng cộng chuỗi truyền thống để loại bỏ SyntaxError
+            //cộng chuỗi truyền thống để loại bỏ SyntaxError
             fetch(contextPath + "/GetShowtimeAjax?movieId=" + movieId + "&cinemaId=" + cinemaId + "&showDate=" + showDate)
                 .then(response => response.json())
                 .then(data => {

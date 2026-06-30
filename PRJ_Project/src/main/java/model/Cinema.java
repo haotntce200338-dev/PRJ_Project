@@ -9,12 +9,14 @@ package model;
  * @author Admin
  */
 public class Cinema {
+
     private int cinemaId;
     private String cinemaName;
     private String address;
     private String regionCode; // Ví dụ: "HCM", "CT"
 
-    public Cinema() {}
+    public Cinema() {
+    }
 
     public Cinema(int cinemaId, String cinemaName, String address, String regionCode) {
         this.cinemaId = cinemaId;
@@ -24,12 +26,35 @@ public class Cinema {
     }
 
     // Getter và Setter
-    public int getCinemaId() { return cinemaId; }
-    public void setCinemaId(int cinemaId) { this.cinemaId = cinemaId; }
-    public String getCinemaName() { return cinemaName; }
-    public void setCinemaName(String cinemaName) { this.cinemaName = cinemaName; }
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
-    public String getRegionCode() { return regionCode; }
-    public void setRegionCode(String regionCode) { this.regionCode = regionCode; }
+    public int getCinemaId() {
+        return cinemaId;
+    }
+
+    public void setCinemaId(int cinemaId) {
+        this.cinemaId = cinemaId;
+    }
+
+    public String getCinemaName() {
+        return cinemaName;
+    }
+
+    public void setCinemaName(String cinemaName) {
+        this.cinemaName = cinemaName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
+    }
 }

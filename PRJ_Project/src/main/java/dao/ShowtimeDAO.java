@@ -12,22 +12,21 @@ import model.Showtime;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import db.DBContext; // Lớp kết nối DB của nhóm ông
+import db.DBContext;
 import model.Showtime;
 
 public class ShowtimeDAO {
-    
+
     public List<Showtime> getShowtimesByFilter(int movieId, int cinemaId, String date) {
         List<Showtime> list = new ArrayList<>();
         String query = "SELECT * FROM Showtime WHERE movie_id = ? AND cinema_id = ? AND show_date = ? AND status = 1";
-        try (Connection conn = new DBContext().getConnection();
-             PreparedStatement ps = conn.prepareStatement(query)) {
-            
+        try (Connection conn = new DBContext().getConnection(); PreparedStatement ps = conn.prepareStatement(query)) {
+
             ps.setInt(1, movieId);
             ps.setInt(2, cinemaId);
             ps.setString(3, date);
             ResultSet rs = ps.executeQuery();
-            
+
             while (rs.next()) {
                 Showtime st = new Showtime();
                 st.setShowtimeId(rs.getInt("showtime_id"));
