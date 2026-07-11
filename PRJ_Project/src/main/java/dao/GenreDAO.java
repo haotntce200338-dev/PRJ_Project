@@ -25,29 +25,32 @@ public class GenreDAO extends DBConnection {
     public List<Genre> getList(){
         List<Genre> list = new ArrayList<>();
         
-        try{
-            String sql = "select * from Genre "
-                    + "order by GenreID";
-            
-            PreparedStatement statement = this.getConnection().prepareStatement(sql);
-            
-            ResultSet rs = statement.executeQuery();
-            
-            while (rs.next()){
-                
-                int id = rs.getInt("GenreID");
-                
-                String name = rs.getString("GenreName");
-                
-                Genre genre = new Genre(id,name);
-                
-                list.add(genre);
-            }
-            
-        }catch (SQLException ex){
-            
-            Logger.getLogger(GenreDAO.class.getName()).log(Level.SEVERE,null,ex);
+        String sql = "SELECT * FROM Genre";
+
+    try {
+
+        PreparedStatement ps = getConnection().prepareStatement(sql);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+
+            Genre g = new Genre();
+
+            g.setGenreID(rs.getInt("GenreID"));
+
+            g.setGenreName(rs.getString("GenreName"));
+
+            list.add(g);
+
         }
-        return list;
+
+    } catch (Exception e) {
+
+        e.printStackTrace();
+
+    }
+
+    return list;
     }
 }

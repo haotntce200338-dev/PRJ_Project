@@ -36,7 +36,7 @@
                 </h2>
 
 
-                <a href="movie/create.jsp" 
+                <a href="home?action=create" 
                    class="btn btn-primary">
 
                     + Add Movie
@@ -190,21 +190,18 @@
                                 <td>
 
 
-                                    <a href="movie/edit?id=<%=m.getMovieID()%>"
+                                    <a href="home?action=edit&id=<%=m.getMovieID()%>"
                                        class="btn btn-warning btn-sm">
-
+                                        
                                         Edit
-
                                     </a>
 
 
 
-                                    <a href="movie/delete?id=<%=m.getMovieID()%>"
+                                    <a href="home?action=delete&id=<%=m.getMovieID()%>"
                                        class="btn btn-danger btn-sm"
                                        onclick="return confirm('Delete this movie?')">
-
                                         Delete
-
                                     </a>
 
 

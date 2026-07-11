@@ -232,83 +232,41 @@ public class MovieDAO extends DBConnection {
 
     }
 
-    //Edit
-    public int editMovie(Movie movie) {
+    //Edit=Update
+    public int updateMovie(Movie movie) {
 
         try {
 
-            String sql
-                    = "update Movie set "
-                    + "Title=?, "
-                    + "Description=?, "
-                    + "Duration=?, "
-                    + "ReleaseDate=?, "
-                    + "Poster=?, "
-                    + "Trailer=?, "
-                    + "Status=?, "
-                    + "GenreID=? "
-                    + "where MovieID=?";
+            String sql = "UPDATE Movie "
+                    + "SET Title = ?, "
+                    + "Description = ?, "
+                    + "Duration = ?, "
+                    + "ReleaseDate = ?, "
+                    + "Poster = ?, "
+                    + "Trailer = ?, "
+                    + "Status = ?, "
+                    + "GenreID = ? "
+                    + "WHERE MovieID = ?";
 
-            PreparedStatement statement
-                    = this.getConnection()
-                            .prepareStatement(sql);
+            PreparedStatement ps = getConnection().prepareStatement(sql);
 
-            statement.setString(
-                    1,
-                    movie.getTitle()
-            );
+            ps.setString(1, movie.getTitle());
+            ps.setString(2, movie.getDescription());
+            ps.setInt(3, movie.getDuration());
+            ps.setString(4, movie.getReleaseDate());
+            ps.setString(5, movie.getPoster());
+            ps.setString(6, movie.getTrailer());
+            ps.setString(7, movie.getStatus());
+            ps.setInt(8, movie.getGenre().getGenreID());
+            ps.setInt(9, movie.getMovieID());
 
-            statement.setString(
-                    2,
-                    movie.getDescription()
-            );
+            return ps.executeUpdate();
 
-            statement.setInt(
-                    3,
-                    movie.getDuration()
-            );
-
-            statement.setString(
-                    4,
-                    movie.getReleaseDate()
-            );
-
-            statement.setString(
-                    5,
-                    movie.getPoster()
-            );
-
-            statement.setString(
-                    6,
-                    movie.getTrailer()
-            );
-
-            statement.setString(
-                    7,
-                    movie.getStatus()
-            );
-
-            statement.setInt(
-                    8,
-                    movie.getGenre().getGenreID()
-            );
-
-            statement.setInt(
-                    9,
-                    movie.getMovieID()
-            );
-
-            return statement.executeUpdate();
-
-        } catch (SQLException ex) {
-
-            Logger.getLogger(MovieDAO.class.getName())
-                    .log(Level.SEVERE, null, ex);
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         return 0;
-
     }
 
     //Delete
