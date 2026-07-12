@@ -21,36 +21,132 @@ import model.Genre;
 public class GenreDAO extends DBConnection {
 
     //Read - lay danh sach Genre
-    
-    public List<Genre> getList(){
+    public List<Genre> getList() {
         List<Genre> list = new ArrayList<>();
-        
+
         String sql = "SELECT * FROM Genre";
 
-    try {
+        try {
 
-        PreparedStatement ps = getConnection().prepareStatement(sql);
+            PreparedStatement ps = getConnection().prepareStatement(sql);
 
-        ResultSet rs = ps.executeQuery();
+            ResultSet rs = ps.executeQuery();
 
-        while (rs.next()) {
+            while (rs.next()) {
 
-            Genre g = new Genre();
+                Genre g = new Genre();
 
-            g.setGenreID(rs.getInt("GenreID"));
+                g.setGenreID(rs.getInt("GenreID"));
 
-            g.setGenreName(rs.getString("GenreName"));
+                g.setGenreName(rs.getString("GenreName"));
 
-            list.add(g);
+                list.add(g);
+
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
 
         }
 
-    } catch (Exception e) {
-
-        e.printStackTrace();
-
+        return list;
     }
 
-    return list;
+    //Create
+    public int createGenre(Genre g) {
+
+        try {
+
+            String sql = "INSERT INTO Genre(GenreName) VALUES(?)";
+
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+
+            ps.setString(1, g.getGenreName());
+
+            return ps.executeUpdate();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+        return 0;
     }
+
+    //Read One
+    public Genre getGenreByID(int id) {
+
+        String sql = "SELECT * FROM Genre WHERE GenreID = ?";
+
+        try {
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+            ps.setInt(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Genre g = new Genre();
+                g.setGenreID(rs.getInt("GenreID"));
+                g.setGenreName(rs.getString("GenreName"));
+                return g;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    //Update
+    // UPDATE
+    public int updateGenre(Genre genre) {
+
+        String sql = "UPDATE Genre SET GenreName = ? WHERE GenreID = ?";
+
+        try {
+
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+
+            ps.setString(1, genre.getGenreName());
+
+            ps.setInt(2, genre.getGenreID());
+
+            return ps.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(GenreDAO.class.getName())
+                    .log(Level.SEVERE, null, ex);
+
+        }
+
+        return 0;
+    }
+
+    // DELETE
+    public int deleteGenre(int id) {
+
+        String sql = "DELETE FROM Genre WHERE GenreID = ?";
+
+        try {
+
+            PreparedStatement ps = getConnection().prepareStatement(sql);
+
+            ps.setInt(1, id);
+
+            return ps.executeUpdate();
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(GenreDAO.class.getName())
+                    .log(Level.SEVERE, null, ex);
+
+        }
+
+        return 0;
+    }
+
 }

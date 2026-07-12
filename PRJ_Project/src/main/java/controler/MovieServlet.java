@@ -67,6 +67,16 @@ public class MovieServlet extends HttpServlet {
 
             request.getRequestDispatcher("WEB-INF/home/edit.jsp")
                     .forward(request, response);
+        } else if (action.equals("delete")) {
+
+            int id = Integer.parseInt(request.getParameter("id"));
+
+            MovieDAO dao = new MovieDAO();
+
+            dao.deleteMovie(id);
+
+            response.sendRedirect("home");
+
         }
     }
 
