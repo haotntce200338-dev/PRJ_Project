@@ -1,0 +1,104 @@
+.screen {
+    width: 70%;
+    margin: 0 auto 35px;
+    text-align: center;
+    padding: 12px;
+    background: #ececec;
+    border-radius: 40px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(0,0,0,.15);
+}
+
+.seat-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.seat-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.row-label {
+    width: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- ĐỊNH DẠNG GHẾ CƠ BẢN --- */
+.seat {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    background: white; /* Mặc định là ghế Normal trống */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px; /* Hạ xuống một chút để chữ như K11, K12 không bị tràn */
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+    user-select: none; /* Tránh bị bôi đen chữ khi click nhanh */
+}
+
+/* Ghế VIP trống (Có thể cho viền đậm hơn hoặc màu nền khác biệt một chút để nhận diện) */
+.seat.vip {
+   border: 2px solid #ff9f43 !important; /* Màu cam vàng */
+    background: #fff9f0 !important;
+}
+
+.seat:hover {
+    background: #ececec;
+}
+
+/* --- CÁC TRẠNG THÁI MÀU SẮC GHẾ --- */
+
+/* 1. Ghế đang chọn (Màu xanh lá) */
+.seat.selected {
+    background: #28a745 !important;
+    border-color: #28a745 !important;
+    color: white !important;
+}
+
+/* 2. Ghế đã bán thực sự (Màu đỏ) */
+.seat.occupied {
+    background: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    cursor: not-allowed;
+}
+
+/* 3. Ghế đang bị người khác khóa tạm thời (Màu cam) */
+.seat.hold {
+    background: #ff9f43 !important;
+    border-color: #ff9f43 !important;
+    color: white !important;
+    cursor: not-allowed;
+}
+
+/* --- XỬ LÝ LỐI ĐI CHÍNH GIỮA PHÒNG CHIẾU --- */
+/* Tạo khoảng trống bên phải của ghế ở giữa để chia làm 2 dãy */
+.seat.aisle-right {
+    margin-right: 24px; 
+}
+
+/* --- CHÚ THÍCH MÀU SẮC (LEGEND) --- */
+.seat-legend {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}

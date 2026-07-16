@@ -1,4 +1,4 @@
-package com.mycompany.prj_project.controller;
+package com.mycompany.prj_project;
 
 import com.mycompany.prj_project.dao.UserDAO;
 import com.mycompany.prj_project.dto.UserDTO;
