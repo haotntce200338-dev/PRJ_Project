@@ -1,9 +1,3 @@
-<%-- 
-    Document   : header
-    Created on : Jun 18, 2026, 9:24:15 PM
-    Author     : MY_PC
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,12 +8,18 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.css">
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/header.css">
-        
+
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/sidebar.css">
-        
+
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/home.css">
-        
+
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/booking.css">
+
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/movie-detail.css">
+        
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/search.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
 
     <body>
@@ -29,7 +29,7 @@
             <div class="container-fluid px-4">
 
                 <!-- Logo -->
-                <a class="navbar-brand logo" href="${pageContext.request.contextPath}/home.jsp">
+                <a class="navbar-brand logo" href="${pageContext.request.contextPath}/home">
                     CinemaHub
                 </a>
 
@@ -45,13 +45,23 @@
                      id="navbarContent">
 
                     <!-- Search -->
-                    <form class="mx-auto search-form"
-                          action="${pageContext.request.contextPath}/movies"
-                          method="get">
-                        <input class="form-control search-box"
-                               type="search"
-                               name="keyword"
-                               placeholder="Search movies...">
+                    <form class="mx-auto search-form" action="${pageContext.request.contextPath}/search" method="get">
+                        <div class="search-container">
+
+                            <input
+                                type="text"
+                                id="searchInput"
+                                name="keyword"
+                                placeholder="Search movies..."
+                                autocomplete="off">
+
+                            <button type="submit">
+                                🔍
+                            </button>
+
+                            <div id="suggestionBox"></div>
+
+                        </div>
                     </form>
 
                     <!-- Right Menu -->
@@ -72,6 +82,47 @@
             </div>
 
         </nav>
+        <script>
+
+            const input = document.getElementById("searchInput");
+
+            const box = document.getElementById("suggestionBox");
+
+            input.addEventListener("keyup", function () {
+
+                let keyword = input.value;
+
+                if (keyword.length === 0) {
+
+                    box.innerHTML = "";
+
+                    return;
+
+                }
+
+                fetch("${pageContext.request.contextPath}/suggest?keyword=" + encodeURIComponent(keyword))
+
+                        .then(res => res.text())
+
+                        .then(html => {
+
+                            box.innerHTML = html;
+
+                        });
+
+            });
+
+            document.addEventListener("click", function (e) {
+
+                if (!box.contains(e.target) && e.target !== input) {
+
+                    box.innerHTML = "";
+
+                }
+
+            });
+
+        </script>              
 
         <script src="${pageContext.request.contextPath}/assets/js/bootstrap.bundle.js"></script>
 

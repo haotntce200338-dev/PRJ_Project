@@ -1,15 +1,17 @@
 .movie-detail-card{
-    display: flex;
-    gap:40px;
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+    padding-bottom:50px;
+    margin-bottom:50px;
+    border-bottom:1px solid #ececec;
 }
 
 .detail-poster{
-    width: 280px;
-    border-radius: 16px;
+    width:320px;
+    height:480px;
+    object-fit:cover;
+    border-radius:16px;
 }
 
 .detail-info{
@@ -17,37 +19,135 @@
 }
 
 .detail-info h1{
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 15px;
+    font-size:52px;
+    font-weight:800;
+    margin-bottom:18px;
+    color:#111;
+}
+
+.detail-info p{
+    font-size:18px;
+    color:#555;
+    line-height:1.9;
+    margin-bottom:12px;
+}
+
+.detail-info strong{
+    color:#111;
 }
 
 .rating{
-    font-size: 20px;
-    color:#f5c518;
-    margin-bottom: 18px;
+    font-size:30px;
+    font-weight:700;
+    color:#f5a000;
+    margin-bottom:28px;
 }
 
 .detail-buttons{
-    margin-top: 30px;
-    display: flex;
-    gap:15px;
+    margin-top:35px;
+}
+
+.detail-buttons .btn{
+    border-radius:12px;
+    padding:14px 35px;
+    font-size:18px;
+    font-weight:700;
+}
+
+.detail-buttons .btn:hover{
+    background:#ffb300;
 }
 
 .overview{
-    margin-top: 50px;
-    background: white;
-    padding:25px;
-    border-radius: 18px;
+    padding:45px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.overview h2{
+    font-size:32px;
+    margin-bottom:18px;
+}
+
+.overview p{
+    font-size:18px;
+    color:#555;
+    line-height:1.9;
+    max-width:900px;
 }
 
 .reviews{
-    margin-top: 40px;
+    padding:45px 0;
+}
+
+.reviews h2{
+    font-size:32px;
+    margin-bottom:25px;
 }
 
 .review-card{
-    background: white;
-    border-radius: 16px;
-    padding:20px;
-    margin-top:15px;
+    padding:25px 0;
+    border-bottom:1px solid #efefef;
+}
+
+.review-card:last-child{
+    border-bottom:none;
+}
+
+.review-card p{
+    color:#555;
+}
+
+.detail-container{
+    background:#f6f6f6;
+    min-height:100vh;
+    padding:35px 60px;
+}
+
+.detail-nav{
+    background: transparent;
+    padding:20px 40px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.detail-nav a{
+    color:#666;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:600;
+
+}
+
+.detail-nav a:hover{
+    color:#111;
+}
+
+.detail-main{
+    max-width:1300px;
+    margin:auto;
+}
+
+.movie-genres{
+    display:flex;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.genre-tag{
+    display:inline-flex;
+    padding:9px 18px;
+    border-radius:999px;
+    border:1px solid #ffbf00;
+    color:#d88b00;
+    font-weight:600;
+    background:#fffdf5;
+    margin-right:10px;
+    margin-bottom:15px;
+}
+
+.movie-meta{
+    display:flex;
+    gap:30px;
+    margin:20px 0 30px;
+    color:#777;
+    font-size:17px;
 }

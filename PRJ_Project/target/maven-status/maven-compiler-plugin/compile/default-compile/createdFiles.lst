@@ -1,2 +1,10 @@
 com\mycompany\prj_project\JakartaRestConfiguration.class
+controller\SearchServlet.class
+controller\SuggestServlet.class
+dao\MovieDAO.class
 com\mycompany\prj_project\resources\JakartaEE10Resource.class
+data\MovieData.class
+controller\MovieDetailServlet.class
+controller\HomeServlet.class
+dao\DBContext.class
+model\Movie.class

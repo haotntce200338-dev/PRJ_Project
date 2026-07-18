@@ -1,41 +1,98 @@
 .sidebar{
     width:260px;
-    border-right: 1px solid #e0e0e0;
+    border-right: 1px solid #ececec;
     position: sticky;
     top:80px;
     height: calc(100vh - 80px);
-    background: #f8f8f8;
+    background: #fff;
 }
 
 .sidebar-section{
-    margin-bottom: 25px;
+    margin-bottom: 18px;
 }
 
 .sidebar-title{
-    color:#888;
+    color:#9b9b9b;
+    letter-spacing: .5px; 
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    margin: 20px 10px 10px;
+    margin: 18px 24px 10px;
 }
 
 .sidebar-item{
-    display: block;
-    color:#7a7a7a;
+    display: flex;
+    align-items: center;
+    height: 46px;
+    position: relative;
+    color:#7f7f7f;
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    padding:14px 25px;
-    transition: 0.25s;
+    padding:0 28px;
+    transition: .2s;
 }
 
 .sidebar-item:hover{
-    background: #efefef;
     color: #111;
 }
 
 .sidebar-item.active{
-    background: #f0f0f0;
     color:#111;
     font-weight: 600;
+}
+
+.sidebar-item.active::before{
+    content:"";
+    position: absolute;
+    left:0;
+    top:50%;
+    width:4px;
+    height:22px;
+    transform: translateY(-50%);
+    background: #ff9f0a;
+    border-radius: 0 4px 4px 0;
+}
+
+.sidebar-item i:first-child{
+    width:22px;
+    margin-right: 16px;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.dropdown-content{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+    padding-left: 58px;
+}
+
+.dropdown-content a{
+    display: block;
+    padding: 7px 0;
+    text-decoration: none;
+    color:#7f7f7f;
+    font-size: 16px;
+    transition: .2s;
+}
+
+.dropdown-content a:hover{
+    color:#111;
+}
+
+.arrow{
+    margin-left: auto;
+    transition: .25s;
+}
+
+.dropdown-content.show{
+    max-height: 180px;
+}
+
+.sidebar-dropdown{
+    overflow: hidden;
+    border-top: 1px solid #ececec;
+    margin-top: 14px;
+    padding-top: 14px;
 }

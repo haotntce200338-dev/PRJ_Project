@@ -25,11 +25,13 @@ body{
 
 .search-box{
     height: 46px;
-    border-radius: 12px;
+    border-radius: 16px;
+    border: 2px solid transparent;
 }
 
 .search-box:focus{
     box-shadow: none;
+    border-color: #f5c518;
 }
 
 .my-ticket-btn{

@@ -1,2 +1,10 @@
 D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\com\mycompany\prj_project\resources\JakartaEE10Resource.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\model\Movie.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\controller\SearchServlet.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\dao\MovieDAO.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\data\MovieData.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\controller\HomeServlet.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\controller\MovieDetailServlet.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\controller\SuggestServlet.java
 D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\com\mycompany\prj_project\JakartaRestConfiguration.java
+D:\PRJ\Project\PRJ_Project\PRJ_Project\src\main\java\dao\DBContext.java

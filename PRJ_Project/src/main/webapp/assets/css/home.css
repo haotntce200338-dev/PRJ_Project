@@ -1,39 +1,44 @@
 body{
     margin: 0;
-    background: #f5f5f5;
+    background: #ffffff;
+    color:#222;
 }
 
 .page-layout{
-    display: flex;
+    display:flex;
+    min-height:100vh;
 }
 
 .main-content{
     flex:1;
-    padding:30px;
+    padding:40px;
+    background:#1f1f1f;
 }
 
 .movie-card{
     display: flex;
-    gap:24px;
-    background: #fff;
-    border-radius: 18px;
-    padding: 20px;
-    margin-bottom: 20px;
+    gap:28px;
+    background: white;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 22px;
     cursor: pointer;
     transition: .25s;
-    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    border: 1px solid #ececec;
+    box-shadow: 0 6px 20px rgba(0,0,0,.05);
 }
 
 .movie-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0,0,0,.12);
 }
 
 .movie-poster{
-    width:140px;
-    height:200px;
+    width:150px;
+    height:210px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
+    flex-shrink: 0;
 }
 
 .movie-info{
@@ -43,21 +48,44 @@ body{
 }
 
 .movie-title{
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
-    color: #222;
-    margin-bottom: 14px;
+    color: #1f1f1f;
+    margin-bottom: 16px;
 }
 
 .movie-description{
-    color: #777;
+    color: #6c757d;
     font-size: 15px;
     line-height: 1.7;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp:2;
+    -webkit-line-clamp:3;
     -webkit-box-orient:vertical;
+}
+
+.movie-genres{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.genre-tag{
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: #fff7d6;
+    color:#c99700;
+    border: 1px solid #f5d76e;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.genre-tag:hover{
+    background: #f5c518;
+    color:#111;
 }
 
 .movie-section{
@@ -72,17 +100,17 @@ body{
 }
 
 .section-header h2{
-    font-size:30px;
+    font-size:32px;
     font-weight: 700;
     color: #222;
 }
 
 .section-header a{
     text-decoration: none;
-    color: #666;
+    color: #d4a400;
     font-weight: 600;
 }
 
 .section-header a:hover{
-    color:#000;
+    color:#b88900;
 }
